@@ -20,13 +20,13 @@ int main(void)
 		ch++;
 	}
 
-	/*print A- Z*/
+	/*print A - Z*/
 	while (CH <= 'Z')
 	{
 		putchar(CH);
 		CH++;
 	}
-	putchar('n\);
+	putchar('\n');
 
 	return (0);
 }
