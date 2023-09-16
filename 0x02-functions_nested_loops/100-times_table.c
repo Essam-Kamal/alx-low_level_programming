@@ -30,11 +30,11 @@ void print_times_table(int n)
 
 				if (Re >= 100)
 				{
-					_putchar((prod / 100) + 48);
-					_putchar((prod / 10) % 10 + 48);
-				} else if (prod <= 99 && prod >= 10)
-					_putchar((prod / 10) + 48);
-				_putchar((prod % 10) + 48);
+					_putchar((Re / 100) + 48);
+					_putchar((Re / 10) % 10 + 48);
+				} else if (Re <= 99 && Re >= 10)
+					_putchar((Re / 10) + 48);
+				_putchar((Re % 10) + 48);
 			}
 			_putchar('\n');
 		}
