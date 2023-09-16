@@ -3,18 +3,20 @@
 /**
  * print_line - print a stright line
  *
- * @n: is the number of times the _ character should be printed
+ * @n: is the number of lines to draw
+ *
+ * Return: empty
 */
 
 void print_line(int n)
 {
-	int 1nChr;
+	int x;
 
 	if (n <= 0)
 		_putchar('\n');
 	else
 	{
-		for (1nChr = 1; 1nChr <= n; 1nChr++)
+		for (x = 1; x <= n; x++)
 			_putchar ('_');
 		_putchar('\n');
 	}
