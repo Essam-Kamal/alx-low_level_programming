@@ -9,7 +9,7 @@
  * in the string, or if an overflow occurs, it returns 0
 */
 
-int _atoi(char *s);
+int _atoi(char *s)
 {
 	int result = 0;
 	int sign = 1;
