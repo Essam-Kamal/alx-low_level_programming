@@ -3,7 +3,9 @@
 
 /**
  * isLower - determines whether ascii is lowercase
+ *
  * @c: character
+ *
  * Return: 1 if true, 0 if false
 */
 
@@ -17,7 +19,7 @@ int isLower(char c)
  *
  * @c: character
  *
- * Return: 0 if true, 0 if false
+ * Return: 1 if true, 0 if false
 */
 
 int isDelimiter(char c)
