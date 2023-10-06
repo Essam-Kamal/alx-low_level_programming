@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * *_str - function that locates a substring.
+ * _strstr - function that locates a substring.
  * @haystack: string
  * @needle: pointer
- * Return: The pointer
+ * Return: The pointer or NULL
 */
 
 char *_strstr(char *haystack, char *needle)
@@ -26,5 +26,6 @@ char *_strstr(char *haystack, char *needle)
 			return (haystack + i);
 		}
 	}
+
 	return (0);
 }
