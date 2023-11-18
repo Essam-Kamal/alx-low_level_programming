@@ -13,22 +13,22 @@ int main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		int i, leastcent = 0, money = atoi(argv[1]);
-		int conts[] = {25, 10, 5, 2, 1};
+	int i, leastcent = 0, money = atoi(argv[1]);
+	int conts[] = {25, 10, 5, 2, 1};
 
-		for (i = 0; i < 5; i++)
+	for (i = 0; i < 5; i++)
+	{
+		if (money >= cents[i])
 		{
-			if (money >= cents[i])
+			leastcent += money / cents[i];
+			money = money % cents[i];
+			if (money % cents[i] == 0)
 			{
-				leastcent += money / cents[i];
-				money = money % cents[i];
-				if (money % cents[i] == 0)
-				{
-					break;
-				}
+				break;
 			}
 		}
-		printf("%d\n", leastcent);
+	}
+	printf("%d\n", leastcent);
 	}
 	else
 	{
