@@ -28,18 +28,30 @@ int _atoi(const char *s)
 	int sign = 1;
 	unsigned long int resp = 0, firstnum, i;
 
-	for (firstnum = 0; !(s[firstnum] >= 48 && s[firstnum] <= 57); firstnum++)
+	if (s[0] == '-')
+	{
+		_puts("Error");
+		exit(98);
+	}
+
+
+	for (firstnum = 0; !(s[firstnum] >= '0' && s[firstnum] <= '9'); firstnum++)
 	{
 		if (s[firstnum] == '-')
 		{
 			sign *= -1;
 		}
+		else if (s[firstnum] != '+')
+		{
+			_puts("Error");
+			exit(98);
+		}
 	}
 
-	for (i = firstnum; s[i] >= 48 && s[i] <= 57; i++)
+	for (i = firstnum; s[i] >= '0' && s[i] <= '9'; i++)
 	{
 		resp *= 10;
-		resp += (s[i] - 48);
+		resp += (s[i] - '0');
 	}
 
 	return (sign * resp);
@@ -73,8 +85,6 @@ void print_int(unsigned long int n)
 
 int main(int argc, char const *argv[])
 {
-	(void)argc;
-
 	if (argc != 3)
 	{
 		_puts("Error");
