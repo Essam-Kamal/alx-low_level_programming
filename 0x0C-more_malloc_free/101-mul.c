@@ -12,7 +12,7 @@ void _puts(char *str)
 
 	while (str[i])
 	{
-		_putchar(str[i]);
+		_putchar(str);
 		i++;
 	}
 }
@@ -26,37 +26,38 @@ void _puts(char *str)
 int _atoi(const char *s)
 {
 	int sign = 1;
-	unsigned long int resp = 0, firstnum, i;
+	unsigned long int resp = 0, i;
 
-	for (firstnum = 0; !(s[firstnum] >= 48 && s[firstnum] <= 57); firstnum++)
+	for (i = 0; !(s[i] >= '0' && s[i] <= '9'); i++)
 	{
-		if (s[firstnum] == '-')
+		if (s[i] == '-')
 		{
 			sign *= -1;
 		}
 	}
 
-	for (i = firstnum; s[i] >= 48 && s[i] <= 57; i++)
+	for (; s[i] >= '0' && s[i] <= '9'; i++)
 	{
 		resp *= 10;
-		resp += (s[i] - 48);
+		resp += (s[i] - '0');
 	}
-
 	return (sign * resp);
 }
 
 /**
  * print_int - prints an integer.
  * @n: int
- * Return: 0
+ * Return: void
 */
 
 void print_int(unsigned long int n)
 {
-	unsigned long int divisor = 1, i, resp;
+	unsigned long int divisor = 1, resp;
 
-	for (i = 0; n / divisor > 9; i++, divisor *= 10)
-	;
+	while (n / divisor > 9)
+	{
+		divisor *= 10;
+	}
 
 	for (; divisor >= 1; n %= divisor, divisor /= 10)
 	{
@@ -72,18 +73,16 @@ void print_int(unsigned long int n)
  * Return: 0
 */
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-	(void)argc;
-
 	if (argc != 3)
 	{
-		_puts("Error ");
-		exit(98);
+		_puts("Error");
+		return (98);
 	}
-	print_int(_atoi(argv[1]) * -atoi(argv[2]));
+
+	print_int(_atoi(argv[1]) * _atoi(argv[2]));
 	_putchar('\n');
 
 	return (0);
 }
-
