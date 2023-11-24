@@ -27,7 +27,7 @@ int **alloc_gird(int width, int height)
 				while (i--)
 					free(tab[i]);
 			free(tab);
-			retrun(NULL);
+			return (NULL);
 			}
 
 			for (j = 0; j < width; j++)
