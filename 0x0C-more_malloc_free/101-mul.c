@@ -28,7 +28,7 @@ int _atoi(const char *s)
 	int sign = 1;
 	unsigned long int resp = 0, firstnum, i;
 
-	for (firstnum = 0; !(s[firstnum] > = 48 && s[firstnum] <= 57); firstnum++)
+	for (firstnum = 0; !(s[firstnum] >= 48 && s[firstnum] <= 57); firstnum++)
 	{
 		if (s[firstnum] == '-')
 		{
