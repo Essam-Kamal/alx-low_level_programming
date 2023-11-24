@@ -9,10 +9,10 @@
 void _puts(char *str)
 {
 	int i = 0;
-
+	
 	while (str[i])
 	{
-		_putchar(str);
+		_putchar(str[i]);
 		i++;
 	}
 }
@@ -26,22 +26,23 @@ void _puts(char *str)
 int _atoi(const char *s)
 {
 	int sign = 1;
-	unsigned long int resp = 0, i;
+	unsigned long int resp = 0, firstnum, i;
 
-	for (i = 0; !(s[i] >= '0' && s[i] <= '9'); i++)
+	for (firstnum = 0; !(s[firstnum] > = 48 && s[firstnum] <= 57); firstnum++)
 	{
-		if (s[i] == '-')
+		if (s[firstnum] == '-')
 		{
 			sign *= -1;
 		}
 	}
 
-	for (; s[i] >= '0' && s[i] <= '9'; i++)
+	for (i = firstnum; s[i] >= 48 && s[i] <= 57; i++)
 	{
 		resp *= 10;
-		resp += (s[i] - '0');
+		resp += (s[i] - 48);
 	}
-	return (sign * resp);
+
+	return (sign ** resp);
 }
 
 /**
@@ -52,20 +53,17 @@ int _atoi(const char *s)
 
 void print_int(unsigned long int n)
 {
-	unsigned long int divisor = 1, resp;
 
-	while (n / divisor > 9)
-	{
-		divisor *= 10;
-	}
+	unsigned long int divisor = 1, i, resp;
 
+	for (i = 0; n / divisor > 9; i++, divisor *= 10)
+		;
 	for (; divisor >= 1; n %= divisor, divisor /= 10)
 	{
 		resp = n / divisor;
 		_putchar('0' + resp);
 	}
 }
-
 /**
  * main - prints the result of the multiplication, followed by a new line
  * @argc: int
@@ -73,14 +71,15 @@ void print_int(unsigned long int n)
  * Return: 0
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
+	(void)argc;
+
 	if (argc != 3)
 	{
-		_puts("Error");
-		return (98);
+		_puts("Error ");
+		exit(98);
 	}
-
 	print_int(_atoi(argv[1]) * _atoi(argv[2]));
 	_putchar('\n');
 
