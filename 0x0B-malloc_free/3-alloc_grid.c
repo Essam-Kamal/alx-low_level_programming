@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * **alloc_gird - returns a pointer to a 2 dimensional array of integers.
+ * **alloc_grid - returns a pointer to a 2 dimensional array of integers.
  * @width: int
  * @height: int
  * Return: 2nd array
 */
 
-int **alloc_gird(int width, int height)
+int **alloc_grid(int width, int height)
 {
 	int **tab, i, j;
 
