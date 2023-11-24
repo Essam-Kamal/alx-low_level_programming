@@ -9,7 +9,7 @@
 void _puts(char *str)
 {
 	int i = 0;
-	
+
 	while (str[i])
 	{
 		_putchar(str[i]);
@@ -42,7 +42,7 @@ int _atoi(const char *s)
 		resp += (s[i] - 48);
 	}
 
-	return (sign ** resp);
+	return (sign * resp);
 }
 
 /**
